@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+<<<<<<< HEAD
 Console.WriteLine("Hello,\" World!");
 Console.BackgroundColor = ConsoleColor.Red;
 Console.Title = "Tega Project";
@@ -25,3 +26,6 @@ Console.WriteLine(myString.Length);
 Console.WriteLine(myString[0]);
 
 char myChar = 'a';
+=======
+Console.WriteLine("Hello, World!");
+>>>>>>> Working-On-String
