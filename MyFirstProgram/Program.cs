@@ -1,32 +1,31 @@
-﻿float myFloat;
-float my_float;
-float MyFloat;
+﻿bool myBool;
+bool my_bool;
+bool MyBool;
 
-double myDouble;
-double m_double;
-double MyDouble;
+myBool = true;
+myBool = false;
 
-//We can assign a value to these variable
-MyFloat = 5.5f;
-myDouble = 5.5d;
+bool coolBool = false; 
 
-//We can declare and assign in one line
-float coolFloat = 5.5f;
-double coolDouble = 5.5;
+coolBool = false;
 
-//We can re-assign a value to these variable
-coolFloat = 5.5f;
-coolDouble = 10.5;
+bool trueAndFalse = true && false;
+bool trueAndTrue = true && true;
+bool falseAndFalse = false && false;
 
-//we can do math with numbers
-float sum = 5.5f + 10.5f;
-float difference = 5.5f - 10.5f;
-float product = 5.5f * 10.5f;
-float quotient = 15.5f / 10.5f;
+bool trueOrFalse = true || false;
+bool trueOrTrue = true || true;
+bool falseOrFalse = false || false;
 
-//The result of the math with string
+bool notTrue = !true;
+bool notFalse = !false;
 
-Console.WriteLine($"5.5f + 10.5f= {sum}");
-Console.WriteLine($"5.5f - 10.5f= {difference}");
-Console.WriteLine($"5.5f * 10.5f= {product}");
-Console.WriteLine($"5.5f / 10.5f= {quotient}");
+Console.WriteLine($" true && false: {trueAndFalse}");
+Console.WriteLine($" true && true: {trueAndTrue}");
+Console.WriteLine($" false && false: {falseAndFalse}");
+Console.WriteLine($" true || false: {trueOrFalse}");
+Console.WriteLine($" true || true: {trueOrTrue}");
+Console.WriteLine($" false || false: {falseOrFalse}");
+Console.WriteLine($" notTrue -- !true: {notTrue}");
+Console.WriteLine($" notFalse -- !false: {notFalse}");
+
