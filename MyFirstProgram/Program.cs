@@ -1,37 +1,22 @@
-﻿//Date and time can be stored in a DateTime variable
-//Dates can be assigned to a DateOnly variable
-//Times can be assigned to a TimeOnly variable
+﻿// Form int to double
+int myInt = 4;
+double myDouble = myInt;
+Console.WriteLine(myInt);
+Console.WriteLine(myDouble);
 
-//we can declare a DateTime Variable
-DateTime myDateTime;
+// Form double to int
+myDouble = 5.5;
+myInt = (int) myDouble;
+Console.WriteLine(myDouble);
+Console.WriteLine(myInt);
 
-DateOnly myDate;
+//Converting string to Int/Double
+string myString = "5";
 
-TimeOnly myTime;
+//The below method of casting is wrong
+//myInt = (int)myString;
 
-//We can assign a value to these variables
-myDateTime = DateTime.Now;
-myDate = new DateOnly(2024, 1, 23);
-myTime = new TimeOnly(1, 23, 45);
-
-//We can declare and assign in one line
-DateTime myDateTime2 = DateTime.Now;
-DateOnly myDate2 = new DateOnly(2024, 1, 23);
-TimeOnly myTime2 = new TimeOnly(1, 23, 45);
-
-//We can re-assign a value to these variables
-myDateTime = DateTime.Now;
-myDate = new DateOnly(2024, 1, 23);
-myTime = new TimeOnly(1, 23, 45);
-
-//Dates and times are complex... Consider
-//That we haven't factored in time zone
-
-//we can make a DateTime variale out of 
-//a DateOnly  and a TimeOnly variable
-DateTime dateTimeFromCombination = new DateTime( myDate, myTime);
-
-//Let declare this to the console
-Console.WriteLine($"Date Only: {myDate}");
-Console.WriteLine($"Time Only: {myTime}");
-Console.WriteLine($"Date Time: {dateTimeFromCombination}");
+//Below is the right way of casting
+myInt = int.Parse(myString);
+Console.WriteLine($"My string { myString}");
+Console.WriteLine($"Parsing string to int {myInt}");
