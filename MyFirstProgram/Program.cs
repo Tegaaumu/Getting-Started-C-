@@ -1,21 +1,32 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿float myFloat;
+float my_float;
+float MyFloat;
 
-int myInt;
-int my_int;
-int MyInt;
+double myDouble;
+double m_double;
+double MyDouble;
 
-myInt = -5;
+//We can assign a value to these variable
+MyFloat = 5.5f;
+myDouble = 5.5d;
 
-int coolInt = 5;
+//We can declare and assign in one line
+float coolFloat = 5.5f;
+double coolDouble = 5.5;
 
-coolInt = 10;
+//We can re-assign a value to these variable
+coolFloat = 5.5f;
+coolDouble = 10.5;
 
-int sum = 5 + 10;
-int difference = 5 - 10;
-int product = 5 * 10;
-int quotient = 5 / 10;
+//we can do math with numbers
+float sum = 5.5f + 10.5f;
+float difference = 5.5f - 10.5f;
+float product = 5.5f * 10.5f;
+float quotient = 15.5f / 10.5f;
 
-Console.WriteLine($"5 + 10= {sum}");
-Console.WriteLine($"5 - 10= {difference}");
-Console.WriteLine($"5 * 10= {product}"); 
-Console.WriteLine($"5 / 10= {quotient}");
+//The result of the math with string
+
+Console.WriteLine($"5.5f + 10.5f= {sum}");
+Console.WriteLine($"5.5f - 10.5f= {difference}");
+Console.WriteLine($"5.5f * 10.5f= {product}");
+Console.WriteLine($"5.5f / 10.5f= {quotient}");
