@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MyFirstProgram")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa325fdb430c6b6d67460d24628b5310c0ad961b")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+780c6b5334ef3e9634e1350043b9b1f13552a3c5")]
->>>>>>> Working-On-String
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f034707dc3e9bc7618aef43dd7fc0f7dfeb24e2f")]
 [assembly: System.Reflection.AssemblyProductAttribute("MyFirstProgram")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MyFirstProgram")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

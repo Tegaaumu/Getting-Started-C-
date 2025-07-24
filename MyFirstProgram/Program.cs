@@ -1,31 +1,21 @@
 ﻿// See https://aka.ms/new-console-template for more information
-<<<<<<< HEAD
-Console.WriteLine("Hello,\" World!");
-Console.BackgroundColor = ConsoleColor.Red;
-Console.Title = "Tega Project";
 
-string myString;
-string my_string;
-string MyString;
+int myInt;
+int my_int;
+int MyInt;
 
-myString = "Hello, World!";
+myInt = -5;
 
-string coolString = "Hello,  World";
+int coolInt = 5;
 
-coolString = "Goodbye, World";
+coolInt = 10;
 
-string firstName = "John";
-string lastName = "Ben\n";
-string fullName = firstName + " " + lastName;
+int sum = 5 + 10;
+int difference = 5 - 10;
+int product = 5 * 10;
+int quotient = 5 / 10;
 
-Console.WriteLine(fullName);
-
-myString = Console.ReadLine();
-
-Console.WriteLine(myString.Length);
-Console.WriteLine(myString[0]);
-
-char myChar = 'a';
-=======
-Console.WriteLine("Hello, World!");
->>>>>>> Working-On-String
+Console.WriteLine($"5 + 10= {sum}");
+Console.WriteLine($"5 - 10= {difference}");
+Console.WriteLine($"5 * 10= {product}"); 
+Console.WriteLine($"5 / 10= {quotient}");
