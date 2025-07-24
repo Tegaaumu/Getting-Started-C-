@@ -1,31 +1,37 @@
-﻿bool myBool;
-bool my_bool;
-bool MyBool;
+﻿//Date and time can be stored in a DateTime variable
+//Dates can be assigned to a DateOnly variable
+//Times can be assigned to a TimeOnly variable
 
-myBool = true;
-myBool = false;
+//we can declare a DateTime Variable
+DateTime myDateTime;
 
-bool coolBool = false; 
+DateOnly myDate;
 
-coolBool = false;
+TimeOnly myTime;
 
-bool trueAndFalse = true && false;
-bool trueAndTrue = true && true;
-bool falseAndFalse = false && false;
+//We can assign a value to these variables
+myDateTime = DateTime.Now;
+myDate = new DateOnly(2024, 1, 23);
+myTime = new TimeOnly(1, 23, 45);
 
-bool trueOrFalse = true || false;
-bool trueOrTrue = true || true;
-bool falseOrFalse = false || false;
+//We can declare and assign in one line
+DateTime myDateTime2 = DateTime.Now;
+DateOnly myDate2 = new DateOnly(2024, 1, 23);
+TimeOnly myTime2 = new TimeOnly(1, 23, 45);
 
-bool notTrue = !true;
-bool notFalse = !false;
+//We can re-assign a value to these variables
+myDateTime = DateTime.Now;
+myDate = new DateOnly(2024, 1, 23);
+myTime = new TimeOnly(1, 23, 45);
 
-Console.WriteLine($" true && false: {trueAndFalse}");
-Console.WriteLine($" true && true: {trueAndTrue}");
-Console.WriteLine($" false && false: {falseAndFalse}");
-Console.WriteLine($" true || false: {trueOrFalse}");
-Console.WriteLine($" true || true: {trueOrTrue}");
-Console.WriteLine($" false || false: {falseOrFalse}");
-Console.WriteLine($" notTrue -- !true: {notTrue}");
-Console.WriteLine($" notFalse -- !false: {notFalse}");
+//Dates and times are complex... Consider
+//That we haven't factored in time zone
 
+//we can make a DateTime variale out of 
+//a DateOnly  and a TimeOnly variable
+DateTime dateTimeFromCombination = new DateTime( myDate, myTime);
+
+//Let declare this to the console
+Console.WriteLine($"Date Only: {myDate}");
+Console.WriteLine($"Time Only: {myTime}");
+Console.WriteLine($"Date Time: {dateTimeFromCombination}");
