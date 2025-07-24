@@ -12,3 +12,4 @@ C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\re
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.pdb
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.genruntimeconfig.cache
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\ref\MyFirstProgram.dll
+C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.sourcelink.json
