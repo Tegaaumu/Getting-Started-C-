@@ -1,71 +1,115 @@
-﻿// lists are used to store multiple values
-// - lists are zero based
-//- list are dynamic in size
-// - we can get values from list
-// - we can set values from a list
-// - we can add values in a list
-// - we can remove values from a list
-// - we can insert values into a list
-// - we can clear a list
-// - we can sort a list!
+﻿// dictionaries are used to store key value pairs
+// - dictionaries are dymic in size
+// - we can get values from a dictionary
+// - we can set values from a dictionary
+// - we can add values from a dictionary
+// - we can remove values from a dictionary
+// - we can clear a dictionary
+// - we can check if a dictionary cantains a key
+// some other properties:
+// - the keys ina adictionary are unique
+// - the values in a dictionary do not need to be unique
+// - dictionary keys do not need to be integers!
 
-//here is how we declare a list
-List<string> words = new List<string>();
-//Or this below
-//List<string> words = new();
+//here is how we declare a dictionary
+Dictionary<string, int> wordsToNumbers = new Dictionary<string, int>();
+Dictionary<int, string> numbersToWords = new Dictionary<int, string>();
+Dictionary<string, int> shorthand = new();
 
-//here is how we add values to a list
-words.Add("one");
-words.Add("two");
-words.Add("three");
+//here is how we add entries into dictionary
+wordsToNumbers.Add("one", 1);
+wordsToNumbers.Add("two", 2);
+wordsToNumbers.Add("three", 3);
 
-//Here is how we get values from a list
-string firstword = words[0]; // "one"
-string secoundword = words[1]; // "one"
-string thridword = words[2]; // "one"
+//here is what this will look like as we go line by line:
+//["one"] = 1
+//["two"] = 2
+//["three"] = 3
 
-words[0] = "four"; // Change the first word to "four"
+//here is how we get values from a dictionary
+int one = wordsToNumbers["one"];
+int two = wordsToNumbers["two"];
+int three = wordsToNumbers["three"];
 
-//here is howw we declare and initialize a list
+//here is how we set values in a dictionary
+wordsToNumbers["one"] = 111;
+wordsToNumbers["two"] = 222;
 
-List<int> numbers = new List<int>
+//wordsToNumbers is now:
+//["one"] = 111 
+//["two"] = 222
+//["three"] = 3
+
+// here is how we declare and initialize a dictionary
+Dictionary<int, string> numbersToWords2 = new()
 {
-    1,
-    2,
-    3,
-    4,
+    { 1, "one" },
+    { 2, "two" },
+    { 3, "three" },
+    { 4, "four" },
+};
+Dictionary<int, string> numbersToWords3 = new()
+{
+    [1] = "one",
+    [2] = "two",
+    [3] = "three",
+    [4] = "four",
+};
+Dictionary<int, string> numbersToWords4 = new Dictionary<int, string>()
+{
+    [1] = "one",
+    [2] = "two",
+    [3] = "three",
+    [4] = "four",
+};
+Dictionary<int, string> numbersToWords5 = new Dictionary<int, string>
+{
+    [1] = "one",
+    [2] = "two",
+    [3] = "three",
+    [4] = "four",
 };
 
-//here is how we get the count of a list
-int count = numbers.Count;
+//here is how we get the count of a dictionary
+int count = numbersToWords2.Count; //4
 
-//here is how we remove a value from a list
-numbers.Remove(1);
-numbers.Remove(2);
-numbers.Remove(3);
-// numbers is now:
-//[4]
+// numbersoWord2 is:
+//[1] = "one"
+//[2] = "two"
+//[3] = "three"
+//[4] = "four"
 
-//here is how we insert a value into a list
-numbers.Insert(0, 1);
-// numbers is now:
-//[1]
-//[4]
-numbers.Insert(0, 2);
-// numbers is now:
-//[2]
-//[1]
-//[4]
-numbers.Insert(1, 3);
-// numbers is now:
-//[2]
-//[3]
-//[1]
-//[4]
-Console.WriteLine(numbers.Count);
+//here is how we remove a value from a dictionary
+numbersToWords2.Remove(1);
+numbersToWords2.Remove(2);
 
-//here is how we clear a list
-numbers.Clear();
+// numbersoWord2 is:
+//[3] = "three"
+//[4] = "four"
 
-//here is how we sort a list
-words.Sort();
+numbersToWords2.Clear();
+numbersToWords2.Clear();
+
+//here is how we check if a dictionary contains a key
+bool caotains = numbersToWords2.ContainsKey(3); //true
+
+//here is how we check and get a value from a dictionary
+bool contains2 = numbersToWords2.TryGetValue(
+    3,
+    out string? value);
+//what happens if we add something that already exists?
+//ERROR!
+// wordsToNumbers.Add("one", 1);
+// wordsToNumbers.Add(1, "one");
+
+//we canuse indexer to add or set values
+// which will overwrite existing values
+wordsToNumbers["one"] = 1;
+numbersToWords2[1] = "two";
+
+Dictionary<int, string> name = new()
+{
+    [1] = "tega",
+};
+
+Console.WriteLine(name[1] = "men");
