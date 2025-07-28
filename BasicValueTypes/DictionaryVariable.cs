@@ -83,7 +83,7 @@
 //numbersToWords2.Remove(1);
 //numbersToWords2.Remove(2);
 
-//// numbersoWord2 is:
+//// numbersoWord2 is:z
 ////[3] = "three"
 ////[4] = "four"
 

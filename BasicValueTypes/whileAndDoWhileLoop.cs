@@ -1,0 +1,57 @@
+﻿//// while loops and do while loops are used
+//// to execute a block of code repeatadly.
+
+////here is what a while a while loop looks like
+////while (condition)
+////{
+////      //code to execute
+////}
+
+////here is what a do while loop looks like 
+////do
+////{
+////      //code to execute
+////}
+////while (condition) 
+
+//// let's make some real ones!
+
+//// here is a while loop that counts to 5
+//int count = 0;
+////while (count > 5)
+////{
+////    Console.WriteLine($"The current count is {count}");
+////    count++;
+////}
+
+////Console.WriteLine($"The total count is {count}!");
+
+////// here is a do while loop that counts to 5
+////count = 0;
+////do
+////{
+////    Console.WriteLine($"The current count is {count}");
+////    count++;
+////}while (count > 5);
+////Console.WriteLine($"The total count is {count}!");
+
+
+
+//while (count < 5)
+//{
+//    if (count == 3)
+//    {
+//        count++;
+//        Console.WriteLine("I'm skipping 3!");
+//        continue;
+//    }
+
+//    Console.WriteLine($"{count}");
+//    count++;
+
+//    if (count == 5)
+//    {
+//        Console.WriteLine("I'm out of here!");
+//        break;
+//    }
+//}
