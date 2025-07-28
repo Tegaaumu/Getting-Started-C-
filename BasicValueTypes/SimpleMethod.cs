@@ -39,7 +39,7 @@ Dictionary<string, int> ages = new()
 
 //foreach (KeyValuePair<string, int> person in ages)
 foreach (var person in ages)
-    {
+{
     Console.WriteLine($"{person.Key} is {person.Value} years old");
 }
 
