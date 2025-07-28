@@ -1,55 +1,30 @@
-﻿// a foreach loop is used to iterate over a 
-// collection of values
-// to be more specific, it iterates over
-// things that are "IEnumerable"
-// all collections are IEnumerable!
+﻿// a parameter is a variable in a method definition. When a method is called
+// the arguments are the data you pass into the method's parameters.
 
-// here is what a foreach loop looks like
-// foreach (Type thing in collectionOfThings)
-// {
-//      do something.....
-//}
+// the parameters go into the parantheses of the method
+// the arguments go into the parantheses of the method call
 
-// let's see a real example with a number array!
-int[] numbers = { 1, 2, 3, 4, 5 };
-foreach (int item in numbers)
+// here is an example of a method with parameters
+
+void MyMethod(string name, int age)
 {
-    Console.WriteLine(item);
+    // the method body
 }
 
-//what about with... a list of strings?
-List<string> words = new List<string>
+// here is an example of a method call with arguments
+MyMethod("Nick", 35);
+
+// can we build upon the example we saf earlier?
+// we can add a parameter to the method to make it more flexible!
+
+void PrintSeparator()
 {
-    "red",
-    "green",
-    "blue",
-};
-foreach (string word in words)
-{
-    Console.WriteLine(word);
+    Console.WriteLine("-----------");
 }
 
-Dictionary<string, int> ages = new()
+void PrintHeader(string header)
 {
-    ["James"] = 63,
-    ["Mary"] = 31,
-    ["Ben"] = 87,
-    ["Lucky"] = 23,
-};
-
-//foreach (KeyValuePair<string, int> person in ages)
-foreach (var person in ages)
-    {
-    Console.WriteLine($"{person.Key} is {person.Value} years old");
-}
-
-// we can use break and continue in a foreach loop
-// just like other loops too!
-foreach (int number in numbers)
-{
-    if (number == 3)
-    {
-        break;
-    }
-    Console.WriteLine(number);
+    PrintSeparator();
+    Console.WriteLine(header);
+    PrintSeparator();
 }
