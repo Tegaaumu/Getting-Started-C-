@@ -1,57 +1,42 @@
-﻿// while loops and do while loops are used
-// to execute a block of code repeatadly.
+﻿// a for loop is a loop that runs a specific number of times
+// we saw how to count with while loops....
+// but a for loop is designed to count!
 
-//here is what a while a while loop looks like
-//while (condition)
-//{
-//      //code to execute
-//}
-
-//here is what a do while loop looks like 
-//do
-//{
-//      //code to execute
-//}
-//while (condition) 
-
-// let's make some real ones!
-
-// here is a while loop that counts to 5
-int count = 0;
-//while (count > 5)
-//{
-//    Console.WriteLine($"The current count is {count}");
-//    count++;
-//}
-
-//Console.WriteLine($"The total count is {count}!");
-
-//// here is a do while loop that counts to 5
-//count = 0;
-//do
-//{
-//    Console.WriteLine($"The current count is {count}");
-//    count++;
-//}while (count > 5);
-//Console.WriteLine($"The total count is {count}!");
-
-
-
-while (count < 5)
+//here is the syntax for a loop:
+for (int i = 0; i < 10; i++)
 {
-    if (count == 3)
-    {
-        count++;
-        Console.WriteLine("I'm skipping 3!");
-        continue;
-    }
+    Console.WriteLine(i);
+}
 
-    Console.WriteLine($"{count}");
-    count++;
+// a for loop has three parts:
+// 1. the initializer: int i = 0;
+// 2. the condition: i < 10;
+// 3. the iterator: i++
 
-    if (count == 5)
+// note that we can't access i outside of the for loop!
+//i = 123; // this will not work!
+
+// we can use break and continue in a for loop as well,
+// just like we did with a while loop.
+
+// here's an example of a for loop with a break;
+for (int i = 0; i < 10; i++)
+{
+    if (i == 5)
     {
-        Console.WriteLine("I'm out of here!");
+        Console.WriteLine("We're outta here!");
         break;
     }
+}
+
+//here's example of a for loop with a continue:
+
+for (int i = 0; i < 10; i++)
+{
+    if (i == 5)
+    {
+        Console.WriteLine("Skipping 5!");
+        continue;
+    }
+    Console.WriteLine(i);
 }
