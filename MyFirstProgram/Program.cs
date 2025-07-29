@@ -1,35 +1,48 @@
-﻿// a return value is a value that is returned from a
-// method to the code that called it
-// methods with return values are called functions!
-// a method can only have one return value
-// and the return value must be of the same type
-// as the method 
+﻿// debugging is the process of finding and 
+// fixing errors within a computer program
+// errors in our C# programs are called execeptions 
+// exceptions are "thrown" when the program encounters an error
 
-// here is an example of a method with a return value
-int Add(int a, int b)
+// let's create a simple program that throws an exception
+
+int IntegerDivision(int x, int y)
 {
-    return a + b;
-};
+    return x / y;
+}
 
-// we can call the method like this
-int sum = Add(5, 3);
+// the program will throw an exception when we try to divide by zero
+//int result = IntegerDivision(10, 0);
 
-// we can also call the method like this
-int x = 5;
-int y = 3;
-int sum2 = Add(x, y);
+// exeptions are caught using try -catch block
+// try-catch blocks look like this:
+try
+{
+    // code that might throw an exception
+}
+catch(Exception e)
+{
+    // code that runs if an exception is thrown
+}
 
-// we can also cALL THE METHOD LIKE THIS 
-int sum3 = Add(Add(1,2), Add(3,4));
-
-// the return value must match the type of the method
-// so this would be an error
-// string Add(int a, int b)
-// {
-// return a + b;
-// }
-
-// and similarly, this would be an error
- //string answer = Add(5, 3);
- // but the below will work
- //string answer = Add(5, 3).ToString();
+// let's catch the exception from our IntegerDivision method
+try
+{
+    IntegerDivision(10, 0);
+}
+catch (Exception e) when (e.Message.Contains("divide by zero"))
+{
+    Console.WriteLine("You can't divide by zero! main");
+}
+catch (DivideByZeroException e)
+{
+    Console.WriteLine("You can't divide by zero!");
+}
+catch (Exception e)
+{
+    Console.WriteLine("An exception was trown!");
+    Console.WriteLine(e.Message);
+}
+finally
+{
+    Console.WriteLine("This code always run one an error type is cut.");
+}
