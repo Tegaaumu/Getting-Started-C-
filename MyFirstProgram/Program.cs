@@ -28,3 +28,7 @@ void PrintHeader(string header)
     Console.WriteLine(header);
     PrintSeparator();
 }
+
+PrintHeader("Example 1:");
+PrintHeader("Example 2:");
+PrintHeader("Example 3:");
