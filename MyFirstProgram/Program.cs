@@ -1,34 +1,35 @@
-﻿// a parameter is a variable in a method definition. When a method is called
-// the arguments are the data you pass into the method's parameters.
+﻿// a return value is a value that is returned from a
+// method to the code that called it
+// methods with return values are called functions!
+// a method can only have one return value
+// and the return value must be of the same type
+// as the method 
 
-// the parameters go into the parantheses of the method
-// the arguments go into the parantheses of the method call
-
-// here is an example of a method with parameters
-
-void MyMethod(string name, int age)
+// here is an example of a method with a return value
+int Add(int a, int b)
 {
-    // the method body
-}
+    return a + b;
+};
 
-// here is an example of a method call with arguments
-MyMethod("Nick", 35);
+// we can call the method like this
+int sum = Add(5, 3);
 
-// can we build upon the example we saf earlier?
-// we can add a parameter to the method to make it more flexible!
+// we can also call the method like this
+int x = 5;
+int y = 3;
+int sum2 = Add(x, y);
 
-void PrintSeparator()
-{
-    Console.WriteLine("-----------");
-}
+// we can also cALL THE METHOD LIKE THIS 
+int sum3 = Add(Add(1,2), Add(3,4));
 
-void PrintHeader(string header)
-{
-    PrintSeparator();
-    Console.WriteLine(header);
-    PrintSeparator();
-}
+// the return value must match the type of the method
+// so this would be an error
+// string Add(int a, int b)
+// {
+// return a + b;
+// }
 
-PrintHeader("Example 1:");
-PrintHeader("Example 2:");
-PrintHeader("Example 3:");
+// and similarly, this would be an error
+ //string answer = Add(5, 3);
+ // but the below will work
+ //string answer = Add(5, 3).ToString();
