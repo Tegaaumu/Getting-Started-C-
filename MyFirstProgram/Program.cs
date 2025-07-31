@@ -1,108 +1,80 @@
-﻿// object oriented programming is a programming paradigm
-// that uses objects and classes in programming 
-// we can structure a program by bundling related
-// properties and behaviours into individual objects
-// this means that for the first time we start to think
-// about our programs less like just a series of steps
-// and more like a collection of things that interact!
+﻿// a filed is a variable that is declared directly in a class.
 
-// in C# we can create by using the class keyword
+// what does private do in the above examples?
+// "private" is an access modifier.
+// we saw "public" as access modifier in earlier videos.
+// "private" specifies that something is accessible only within the class
 
-// we can create an object from a aclass using the new keyword
-OurClass ourObject = new OurClass();
+Person2 john = new Person2();
+// john._name = "John"; // this will not work because _name is private
 
-// we can use the short-form method to create an object
-OurClass OuObject2 = new();
+Person3 joinWithMethod = new Person3();
+Console.WriteLine(joinWithMethod.GetName());
 
-// let's make a new instance!
-OurSecoundClass ourSecoundObject = new();
-ourSecoundObject.ExampleMethod();
+// method and functions can also have "private" access modifiiers
+// if a method/function is private, it can only be accessed within the class
+// there are other access modifiers that we won't cover in this coure
 
-int result = ourSecoundObject.ExampleFunction();
+Person4 joinWithProperties = new Person4();
+Console.WriteLine(joinWithProperties.Name);
+Console.WriteLine(joinWithProperties.Name2);
+Console.WriteLine(joinWithProperties.Name3);
 
+Console.WriteLine("Setting the name...");
+joinWithProperties.MutableName = "John Doe";
+Console.WriteLine(joinWithProperties.MutableName);
+Console.WriteLine(joinWithProperties.Name);
+Console.WriteLine(joinWithProperties.Name2);
+Console.WriteLine(joinWithProperties.Name3);
 
-// where else have we seen classes and objects?
-// the console class!
-Console.WriteLine("This is a method on the console class!");
+//here is how we declare a field in a class
 
-// Console.writeline looks a little bit different.....
-// why didin't we have to create a new Console object?
-// we'll see why in a later lesson!
+class Person
+{
+    private string _name = "James";
 
-//objects are "reference types" in C#
-// and up until now we've only been working with
-// "value types" like int, double, and bool
-// .... except for our collections!
-
-OurClass object1 = new OurClass(); // new references
-OurClass object2 = new OurClass(); // new references
-OurClass object3 = object1; // same reference as object1
-
-Console.WriteLine("Object1 === Object2:");
-Console.WriteLine(object1 == object2); // false
-Console.WriteLine("Object1 === Object3:");
-Console.WriteLine(object1 == object3); // true
-
-// collections are very mush same!
-List<int> myNumber1 = new List<int> { 1, 2, 3 };
-List<int> myNumber2 = new List<int> { 1, 2, 3 };
-
-
-Console.WriteLine("myNumber1 === myNumber2:");
-Console.WriteLine(myNumber1 == myNumber2); // false
-
-// let's wrap up with re-examining parameter passing
-// with value types and reference types!
-void ChangeValue(int value){
-    value = 42;    
+    //public void SomeMe()
+    //{
+    //    this._name = "John";
+    //}
 }
 
-int myVlaue = 12337;
-Console.WriteLine("MyValue Before ChangeValue:");
-Console.WriteLine(myVlaue); // 1337
-ChangeValue(myVlaue);
-Console.WriteLine("MyValue After ChangeValue:");
-Console.WriteLine(myVlaue); // 1337
-
-void ChangeReference(List<string> words)
+// we can give a field a vlaue when we declare it
+class Person2
 {
-    words.Add("form");
-    words.Add("Dev");
-    words.Add("Leader");
-
-    words = new List<string>();
+    private string _name = "James";
 }
 
-List<string> myWords = new List<string> { "Hello", "Word" };
-Console.WriteLine("MyWord Before ChangeReferences:");
-Console.WriteLine(string.Join(" ", myWords)); // Hello World
-ChangeReference(myWords);
-Console.WriteLine("MyWord After ChangeReferences:");
-Console.WriteLine(string.Join(" ", myWords)); // Hello World from Dev Leader
 
-// this is because when we pass a value type to a method
-// we're passing a copy of the value but when we pass a 
-// references typr we're passing the reference!
-
-
-public class OurClass
+class Person3
 {
-};
+    private string _name = "James";
 
-
-// rememeber the methods and functions we were creating?
-// we can now create methods and functions that are 
-// associated with a class!
-
-public class OurSecoundClass
-{
-    public void ExampleMethod()
+    public string GetName()
     {
-        Console.WriteLine("Hello from our method!");
+        return _name;
+    }
+}
+
+
+class Person4
+{
+    private string _name = "John";
+
+    public string Name
+    {
+        get
+        {
+            return _name;
+        }
     }
 
-    public int ExampleFunction()
+    public string Name2 => _name;
+    public string Name3 { get; } = "John";
+
+    public string MutableName
     {
-        return 42;
+        get { return _name; }
+        set { _name = value; }
     }
 }
