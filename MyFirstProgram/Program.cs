@@ -1,80 +1,67 @@
-﻿// a filed is a variable that is declared directly in a class.
+﻿// static is a modifier that makes a member belong to a type, rather than an "instances" of a type
+// we can even make an entire classes static.
 
-// what does private do in the above examples?
-// "private" is an access modifier.
-// we saw "public" as access modifier in earlier videos.
-// "private" specifies that something is accessible only within the class
+// note that we make an instance of "MystaticClass" because it is marked static
+//MyStaticClass mystaticClass = new MyStatic(); // this will not work!
 
-Person2 john = new Person2();
-// john._name = "John"; // this will not work because _name is private
+//static classes cannot have instance members, so anything inside of a static class must also be static
+MyStaticClass.MyStaticMethod();
+//MyStaticClass.MyStaticMethodWork(); //This will not work
 
-Person3 joinWithMethod = new Person3();
-Console.WriteLine(joinWithMethod.GetName());
+// notice how we don't need to make an instance of "MystaticClass" to call MyStaticMethod?
+// this is just like Console.WriteLine! this means that Console.WriteLine is a Static method!
+MyNonStaticClass myNonStaticClass1 = new MyNonStaticClass();
+MyNonStaticClass myNonStaticClass2 = new MyNonStaticClass();
 
-// method and functions can also have "private" access modifiiers
-// if a method/function is private, it can only be accessed within the class
-// there are other access modifiers that we won't cover in this coure
+Console.WriteLine("Before mutating properties on MyNonStaticClass...");
+myNonStaticClass1.MyInstanceMethod();
+myNonStaticClass2.MyInstanceMethod();
+MyNonStaticClass.MyStaticMethod();
 
-Person4 joinWithProperties = new Person4();
-Console.WriteLine(joinWithProperties.Name);
-Console.WriteLine(joinWithProperties.Name2);
-Console.WriteLine(joinWithProperties.Name3);
+//let's mutate these things and see what happens!
+myNonStaticClass1.MyInstanceProperty = "Dev";
+myNonStaticClass2.MyInstanceProperty = "Leader";
+MyNonStaticClass.MyStaticProperty = "Nic Consentino";
 
-Console.WriteLine("Setting the name...");
-joinWithProperties.MutableName = "John Doe";
-Console.WriteLine(joinWithProperties.MutableName);
-Console.WriteLine(joinWithProperties.Name);
-Console.WriteLine(joinWithProperties.Name2);
-Console.WriteLine(joinWithProperties.Name3);
+Console.WriteLine("After mutating properties on MyNonStaticClass...");
+myNonStaticClass1.MyInstanceMethod();
+myNonStaticClass2.MyInstanceMethod();
+MyNonStaticClass.MyStaticMethod();
 
-//here is how we declare a field in a class
-
-class Person
+//on non-static classes, we *can* add static memebers
+class MyNonStaticClass
 {
-    private string _name = "James";
+    public string MyInstanceProperty { get; set; } = "Nick";
 
-    //public void SomeMe()
+    public static string MyStaticProperty { get; set; } = "Cosentino";
+
+    public static void MyStaticMethod()
+    {
+        Console.WriteLine($"The static property value is: {MyStaticProperty}");
+
+        //The below will not work because MyInstancesProperty is not static
+        //Console.WriteLine($"The instance property value is: {MyInstanceProperty}");
+
+    }
+
+    public void MyInstanceMethod()
+    {
+        Console.WriteLine($"The instance property value is: {MyInstanceProperty}");
+
+        //The below will work because MyInstancesProperty is static properties on an instance method
+        Console.WriteLine($"The static property value is: {MyStaticProperty}");
+
+    }
+}
+
+static class MyStaticClass
+{
+    public static void MyStaticMethod()
+    {
+        Console.WriteLine("I am a static method!");
+    }
+    //public void MyStaticMethodWork()
     //{
-    //    this._name = "John";
+    //    Console.WriteLine("I am a static method!");
     //}
-}
-
-// we can give a field a vlaue when we declare it
-class Person2
-{
-    private string _name = "James";
-}
-
-
-class Person3
-{
-    private string _name = "James";
-
-    public string GetName()
-    {
-        return _name;
-    }
-}
-
-
-class Person4
-{
-    private string _name = "John";
-
-    public string Name
-    {
-        get
-        {
-            return _name;
-        }
-    }
-
-    public string Name2 => _name;
-    public string Name3 { get; } = "John";
-
-    public string MutableName
-    {
-        get { return _name; }
-        set { _name = value; }
-    }
 }
