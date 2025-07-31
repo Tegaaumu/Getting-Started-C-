@@ -1,67 +1,153 @@
-﻿// static is a modifier that makes a member belong to a type, rather than an "instances" of a type
-// we can even make an entire classes static.
+﻿// constructors are used to initialize a class
 
-// note that we make an instance of "MystaticClass" because it is marked static
-//MyStaticClass mystaticClass = new MyStatic(); // this will not work!
+//ExplicitConstructor explicitConstructor = new ExplicitConstructor();
+//Console.ReadLine();
 
-//static classes cannot have instance members, so anything inside of a static class must also be static
-MyStaticClass.MyStaticMethod();
-//MyStaticClass.MyStaticMethodWork(); //This will not work
+//ConstructorWithParameter constructorWithParameter = new ConstructorWithParameter("Hello World!");
+//Console.ReadLine();
 
-// notice how we don't need to make an instance of "MystaticClass" to call MyStaticMethod?
-// this is just like Console.WriteLine! this means that Console.WriteLine is a Static method!
-MyNonStaticClass myNonStaticClass1 = new MyNonStaticClass();
-MyNonStaticClass myNonStaticClass2 = new MyNonStaticClass();
 
-Console.WriteLine("Before mutating properties on MyNonStaticClass...");
-myNonStaticClass1.MyInstanceMethod();
-myNonStaticClass2.MyInstanceMethod();
-MyNonStaticClass.MyStaticMethod();
+//MultipleConstructors multipleConstructors = new();
+////MultipleConstructors multipleConstructors = new("testing the soil");
+//Console.ReadLine();
 
-//let's mutate these things and see what happens!
-myNonStaticClass1.MyInstanceProperty = "Dev";
-myNonStaticClass2.MyInstanceProperty = "Leader";
-MyNonStaticClass.MyStaticProperty = "Nic Consentino";
+//OurCollectionOfWords instance = new();
+//instance.Add("Hello");
+//instance.Add("Word");
+//instance.Print();
+//Console.ReadLine();
 
-Console.WriteLine("After mutating properties on MyNonStaticClass...");
-myNonStaticClass1.MyInstanceMethod();
-myNonStaticClass2.MyInstanceMethod();
-MyNonStaticClass.MyStaticMethod();
+//List<string> nameOfList = new List<string>() 
+//{ 
+//    "Tega", "David", "Tega", "mary"
+//};
+//OurCollectionOfWords2 instance = new(nameOfList);
+//instance.Print();
+//Console.ReadLine();
 
-//on non-static classes, we *can* add static memebers
-class MyNonStaticClass
+// Note the below we called the static constructor twice when we called the two instances
+// But it will only call the static Constructor one because it's constructor is static unlike public sonstructor.
+//var t1 = new StaticConstructor();
+//var t2 = new StaticConstructor();
+//Console.ReadLine();
+
+OurClassWithAHiddenConstructor ourClassWithAHiddenConstructor = new(5);
+Console.ReadLine();
+
+
+//this has a constructor even though we can't see it
+class ImplicitConstructor
 {
-    public string MyInstanceProperty { get; set; } = "Nick";
 
-    public static string MyStaticProperty { get; set; } = "Cosentino";
+}
 
-    public static void MyStaticMethod()
+// this class has a parameterless constructor
+class ExplicitConstructor
+{
+    public ExplicitConstructor()
     {
-        Console.WriteLine($"The static property value is: {MyStaticProperty}");
-
-        //The below will not work because MyInstancesProperty is not static
-        //Console.WriteLine($"The instance property value is: {MyInstanceProperty}");
-
-    }
-
-    public void MyInstanceMethod()
-    {
-        Console.WriteLine($"The instance property value is: {MyInstanceProperty}");
-
-        //The below will work because MyInstancesProperty is static properties on an instance method
-        Console.WriteLine($"The static property value is: {MyStaticProperty}");
-
+        Console.WriteLine("ExplicitConstructor constructor called");
     }
 }
 
-static class MyStaticClass
+// this class has a constructor that takes in a value
+
+class ConstructorWithParameter
 {
-    public static void MyStaticMethod()
+    public ConstructorWithParameter(string message)
     {
-        Console.WriteLine("I am a static method!");
+        Console.WriteLine(message);
     }
-    //public void MyStaticMethodWork()
-    //{
-    //    Console.WriteLine("I am a static method!");
-    //}
+}
+//this is a class with nultiple constructors "chained"
+// together by using : this() syntax
+
+class MultipleConstructors
+{
+    // here we chain the below one to this one in case
+    // there is no message so it provide a default message
+    public MultipleConstructors() 
+        : this("This is the default message!")
+    {
+    }
+    public MultipleConstructors(string message)
+    {
+        Console.WriteLine(message);
+    }
+}
+
+class OurCollectionOfWords
+{
+    private List<string> _strings;
+    public OurCollectionOfWords()
+    {
+
+        // we can initialize the list here! this
+        // will make its safe for us to use the list
+        // later on in the class
+        _strings = new List<string>();
+    }
+
+    public void Add(string message)
+    {
+        _strings.Add(message);
+    }
+
+    public void Print()
+    {
+        foreach (var item in _strings)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+
+class OurCollectionOfWords2
+{
+    private List<string> _strings;
+    public OurCollectionOfWords2(List<string> words)
+    {
+        _strings = new List<string>();
+
+        foreach (var item in words)
+        {
+            _strings.Add(item);
+        }
+
+        // we can initialize the list here! this
+        // will make its safe for us to use the list
+        // later on in the class
+        //_strings = new List<string>();
+    }
+
+    public void Print()
+    {
+        foreach (var item in _strings)
+        {
+            Console.WriteLine(item);
+        }
+    }
+}
+class StaticConstructor
+{
+    static StaticConstructor()
+    {
+        Console.WriteLine("StaticConstuctor constructor called");
+    }
+}
+class OurClassWithAHiddenConstructor
+{
+    public OurClassWithAHiddenConstructor(int value)
+        : this()
+    {
+        Console.WriteLine(
+            $"This is the public constructor and " +
+            $"we recieved value {value}");
+    }
+    private OurClassWithAHiddenConstructor()
+    {
+        Console.WriteLine(
+            "Nobody can call this constructor " +
+            "directly from the outside!");
+    }
 }
