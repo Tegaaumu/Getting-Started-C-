@@ -1,140 +1,108 @@
-﻿//✅ Question 1: Combine Control Flow and Methods
-//Task:
-//Write a method called CalculateSum that accepts an integer array as an argument and returns the sum of all even numbers using a foreach loop.
+﻿// object oriented programming is a programming paradigm
+// that uses objects and classes in programming 
+// we can structure a program by bundling related
+// properties and behaviours into individual objects
+// this means that for the first time we start to think
+// about our programs less like just a series of steps
+// and more like a collection of things that interact!
 
-//In Main, create an integer array with at least 6 values.
+// in C# we can create by using the class keyword
 
-//Call the CalculateSum method and print the result.
+// we can create an object from a aclass using the new keyword
+OurClass ourObject = new OurClass();
 
-//Bonus: Use a ternary operator to decide whether to print "Sum is even" or "Sum is odd" after displaying the result.
+// we can use the short-form method to create an object
+OurClass OuObject2 = new();
 
-int[] arrays1 = new int[5]
+// let's make a new instance!
+OurSecoundClass ourSecoundObject = new();
+ourSecoundObject.ExampleMethod();
+
+int result = ourSecoundObject.ExampleFunction();
+
+
+// where else have we seen classes and objects?
+// the console class!
+Console.WriteLine("This is a method on the console class!");
+
+// Console.writeline looks a little bit different.....
+// why didin't we have to create a new Console object?
+// we'll see why in a later lesson!
+
+//objects are "reference types" in C#
+// and up until now we've only been working with
+// "value types" like int, double, and bool
+// .... except for our collections!
+
+OurClass object1 = new OurClass(); // new references
+OurClass object2 = new OurClass(); // new references
+OurClass object3 = object1; // same reference as object1
+
+Console.WriteLine("Object1 === Object2:");
+Console.WriteLine(object1 == object2); // false
+Console.WriteLine("Object1 === Object3:");
+Console.WriteLine(object1 == object3); // true
+
+// collections are very mush same!
+List<int> myNumber1 = new List<int> { 1, 2, 3 };
+List<int> myNumber2 = new List<int> { 1, 2, 3 };
+
+
+Console.WriteLine("myNumber1 === myNumber2:");
+Console.WriteLine(myNumber1 == myNumber2); // false
+
+// let's wrap up with re-examining parameter passing
+// with value types and reference types!
+void ChangeValue(int value){
+    value = 42;    
+}
+
+int myVlaue = 12337;
+Console.WriteLine("MyValue Before ChangeValue:");
+Console.WriteLine(myVlaue); // 1337
+ChangeValue(myVlaue);
+Console.WriteLine("MyValue After ChangeValue:");
+Console.WriteLine(myVlaue); // 1337
+
+void ChangeReference(List<string> words)
 {
-    3,
-    5,
-    4,
-    9,
-    7,
+    words.Add("form");
+    words.Add("Dev");
+    words.Add("Leader");
+
+    words = new List<string>();
+}
+
+List<string> myWords = new List<string> { "Hello", "Word" };
+Console.WriteLine("MyWord Before ChangeReferences:");
+Console.WriteLine(string.Join(" ", myWords)); // Hello World
+ChangeReference(myWords);
+Console.WriteLine("MyWord After ChangeReferences:");
+Console.WriteLine(string.Join(" ", myWords)); // Hello World from Dev Leader
+
+// this is because when we pass a value type to a method
+// we're passing a copy of the value but when we pass a 
+// references typr we're passing the reference!
+
+
+public class OurClass
+{
 };
 
-List<int> listedItems = new List<int>()
-{
-    23,
-    25,
-    24,
-    28,
-    27,
-};
 
-int CalculateSum(int[] arrays)
-{
-    int sum = 0;
+// rememeber the methods and functions we were creating?
+// we can now create methods and functions that are 
+// associated with a class!
 
-    foreach (var item in arrays)
+public class OurSecoundClass
+{
+    public void ExampleMethod()
     {
-        sum += item;
-        Console.WriteLine($" current sum of Array is: {sum}");
+        Console.WriteLine("Hello from our method!");
     }
-    return sum;
-}
-int CalculateSumLism(List<int> arrays)
-{
-    int sum = 0;
 
-    foreach (var item in arrays)
+    public int ExampleFunction()
     {
-        sum += item;
-        Console.WriteLine($" current sum of List is: {sum}");
+        return 42;
     }
-    return sum;
-}
-
-int valueIs = CalculateSum(arrays1);
-int valueIss = CalculateSumLism(listedItems);
-
-string EvenOrOdd1 = (valueIs % 2 == 0) ? "Sum is odd" : "Sum is even";
-string EvenOrOdd2 = (valueIss % 2 == 0) ? "Sum is odd" : "Sum is even";
-
-Console.WriteLine($"Below is the final array sum of everything {valueIs} is {EvenOrOdd1}");
-Console.WriteLine($"Below is the final List sum of everything {valueIss} is {EvenOrOdd2}");
-
-//✅ Question 2: Practice Collections and Exception Handling
-//Task:
-//Create a dictionary named studentScores with student names as keys and their scores (float) as values.
-
-//Add at least 3 students to the dictionary.
-
-//Ask the user to input a student name.
-
-//Use a try-catch-finally block to:
-
-//Attempt to retrieve and print the student's score.
-
-//Handle the exception if the name is not found.
-
-//Finally, print "Search completed."
-
-Dictionary<string, int> studentRecord = new()
-{
-    ["Tega"] = 30,
-    ["James"] = 20,
-    ["David"] = 40,
-};
-
-Console.WriteLine("Please input student name: 👇👇");
-string userInputedName = Console.ReadLine();
-
-try
-{
-    foreach (var item in studentRecord)
-    {
-        if (userInputedName == item.Key)
-        {
-            Console.WriteLine($"{userInputedName} score {studentRecord[userInputedName]}");
-        }
-        //else
-        //{
-        //    Console.WriteLine("The name you inputed is not in our record");
-        //}
-    }
-}
-finally
-{
-    Console.WriteLine("Search completed.");
-}
-
-//✅ Question 3: Practice Data Types and Parsing
-//Task:
-//Create a method that asks the user to input two strings representing numbers. Parse the strings into float using float.TryParse.
-
-//If both parses succeed, multiply the two numbers and display the result.
-
-//If either fails, display an appropriate message.
-
-//Use:
-
-//CastingAndParsingVariables.cs concepts
-
-//FloatDoubleVariable.cs
-
-//Control statements for validation
-
-Console.WriteLine("Input First string or numbers");
-string firstOne = Console.ReadLine();
-
-Console.WriteLine("Input Secound string or numbers");
-string firstTwo = Console.ReadLine();
-try
-{
-    bool foaltFirstone = float.TryParse(firstOne, out float result1);
-    bool foaltFirstTwo = float.TryParse(firstTwo, out float result2);
-    if (foaltFirstTwo && foaltFirstone)
-    {
-        Console.WriteLine($"The multiplication of but digit are {result1 * result2}");
-    }
-    Console.WriteLine($" If true meaasge was a success if false did not work: --{foaltFirstone}");
-}
-catch(Exception e)
-{
-    Console.WriteLine(e.Message);
 }

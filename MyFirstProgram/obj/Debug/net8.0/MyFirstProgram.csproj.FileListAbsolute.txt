@@ -7,9 +7,9 @@ C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\My
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.AssemblyInfoInputs.cache
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.AssemblyInfo.cs
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.sourcelink.json
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.dll
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\refint\MyFirstProgram.dll
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.pdb
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.genruntimeconfig.cache
 C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\ref\MyFirstProgram.dll
-C:\Users\HP\source\repos\GettingStartedCSharp\MyFirstProgram\obj\Debug\net8.0\MyFirstProgram.sourcelink.json
