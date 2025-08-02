@@ -10,7 +10,7 @@
 //Bonus:
 //Use a ternary operator to tell the user whether their age is odd or even.
 
-Console.WriteLine("Question 1 – Easy: Basic Variables and Logic");
+//Console.WriteLine("🔹 Question 1 – Easy: Basic Variables and Logic");
 
 //Console.WriteLine("Good day, Please enter your details below. (Name, Age, and Favorite number");
 
@@ -65,7 +65,7 @@ Console.WriteLine("Question 1 – Easy: Basic Variables and Logic");
 
 //Bonus: Use TryParse to allow users to input numbers into the array and handle invalid entries.
 
-Console.WriteLine("Question 2 – Medium: Arrays, Lists, and Control Flow");
+//Console.WriteLine("Question 2 – Medium: Arrays, Lists, and Control Flow");
 //List<int> generalNumbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 ////int[] arrayOme = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 //List<int> FilterOddNumbers(int[] numbers)
@@ -132,7 +132,7 @@ Console.WriteLine("Question 2 – Medium: Arrays, Lists, and Control Flow");
 //Bonus:
 //Make FullName a computed property with only a get.
 
-Console.WriteLine("Question 3 – Hard: OOP with Constructors, Fields & Properties");
+//Console.WriteLine("🔹 Question 3 – Hard: OOP with Constructors, Fields & Properties");
 //Student studentName = new Student("John", "Doe");
 //studentName.PrintGreeting();
 //Student student2 = new Student("Ada", "Obi");
@@ -181,7 +181,7 @@ Console.WriteLine("Question 3 – Hard: OOP with Constructors, Fields & Properti
 
 //Call the method and display the result if successful
 
-Console.WriteLine("Question 4 – Very Hard: Exception Handling & Static Methods");
+//Console.WriteLine("🔹 Question 4 – Very Hard: Exception Handling & Static Methods");
 
 //try
 //{
